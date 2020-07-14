@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dipesh Chaudhary</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+
+  <body>
+
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+       <ul class="nav justify-content-end">
+  <li class="nav-item" >
+
+    <a href="https://github.com/DipeshKrChaudhary"  class="fa fa-github"  type="button" style="font-size:40px;margin-right:15px;" ></a>
+  </li> <br>
+  <li class="nav-item">
+        <a href="https://www.linkedin.com/in/dipesh-chaudhary-6383b11aa/"  class="fa fa-linkedin"  type="button" style="font-size:40px;margin-right:15px;" ></a>
+  </li>
+            <li class="nav-item">
+        <a href="https://www.facebook.com/mnm.mnm44"  class="fa fa-facebook" type="button" style="font-size:40px;margin-right:15px;" ></a>
+  </li>
+            <li class="nav-item">
+        <a href="https://www.instagram.com/dipesh_kr._chaudhary/?hl=en"   type="button" class="fa fa-instagram" style="font-size:40px;margin-right:80px;" ></a>
+  </li>
+
+</ul>
+
+        <div class="container">
+          <h1 class="jumbotron-heading" style="font-size: 50px;">Dipesh Chaudhary</h1>
+          <img src="{% static '1.jpg' %}" height="300" />
+           <p class="lead text-muted" style=" font-weight: bolder;">Hi I am Dipesh Kumar Chaudhary.<p/>
+           <p class="lead text-muted" style=" font-weight: bolder;"> I am BIT student of London Metropolitan University.</p>
+           <p class="lead text-muted" style=" font-weight: bolder;"> I love programming and Django in particular!
+           </p>
+          <p>
+            <a href="mailto:chaudharydipesh856@gmail.com" class="btn btn-primary my-2" style=" font-weight: bold; ">Email Me</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <h1 class="jumbotron-heading text-center">Projets & assigments</h1>
+        <br>
+        <div class="container">
+
+          <div class="row">
+            {% for job in jobs.all %}
+            <div class="col-md-4">
+              <a href="{% url 'detail' job.id %}">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top"  width="100%" height="225" src="{{ job.image.url }}">
+                <div class="card-body">
+                  <p class="card-text" style=" font-weight: bold;">{{ job.summary }}</p>
+                </div>
+                </a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.js' %}" ></script>
+    <script src="{% static 'jquery-3.3.1.min.js' %}" ></script>
+  </body>
+</html>
