@@ -1,2 +1,2 @@
 # dipesh
-This is simpl portfoolio website using Django.
+This is simpe portfolio website using Django.
